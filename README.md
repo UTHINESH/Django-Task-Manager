@@ -11,7 +11,7 @@ Delete tasks: Users can remove tasks that are no longer needed.
 
 # Installation:
 
-Clone the repository: git clone https://github.com/your_username/TaskManagerApp.git
+Clone the repository: git clone https://github.com/UTHINESH/Django-Task-Manager.git
 Install dependencies: pip install -r requirements.txt
 Run migrations: python manage.py migrate
 Start the development server: python manage.py runserver
