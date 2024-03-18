@@ -9,9 +9,10 @@ from django.forms.widgets import PasswordInput,TextInput
 
 from django import forms
 
-from .models import Task
+from .models import Task,Profile
 
-# from crispy_forms import templatetags
+from crispy_forms import templatetags
+
 
 
 
@@ -44,3 +45,28 @@ class CreateTaskForm(forms.ModelForm):
         fields = ['title','content',]
         exclude = ['user',]
 
+
+
+#   Update a user
+
+class UpdateUserForm(forms.ModelForm):
+
+    password = None
+
+    class Meta:
+
+        model = User
+        fields = ['username','email',]
+        exclude = ['password1','password2',]
+
+
+# Update a profile picture
+        
+class UpdateProfileForm(forms.ModelForm):
+
+    profile_pic = forms.ImageField(widget=forms.FileInput(attrs={'class':'form-control-file'}))
+
+    class Meta:
+
+        model = Profile
+        fields = ['profile_pic',]

@@ -11,9 +11,9 @@
 
         <meta name="viewport" content="width-device-width, initial-scale=1, maximum-scale=1"/>
 
-        <link rel="stylesheet" type="text/css" href="https://bootswatch.com/5/solar/bootstrap.min.css">
+        <link rel="stylesheet" type="text/css" href="https://bootswatch.com/5/lux/bootstrap.min.css">
 
-        <link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}">
+        <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
 
         <title> Taskly | Create task</title>
 
@@ -28,14 +28,14 @@
 
     <hr>
 
-    <div class="container bg-white shadow-md p-5 form-layout"  style="margin-top: 20px;">
+    <div class="text-dark container bg-grey shadow-lg p-5 form-layout" style="margin-top: 20px;">
     
      
         <form  method="post" autocomplete="off">
             {% csrf_token %}
 
 
-            {{form.as_p}}
+            {{form|crispy}}
 
             
             <br><br>

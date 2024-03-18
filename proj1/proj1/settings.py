@@ -27,7 +27,7 @@ SECRET_KEY = 'django-insecure-3y+tsd%*)8mdovjcgne*ot6wa4!b2-fdr53p=$5p5ete-^kco&
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['127.0.0.1','192.168.1.67']
+ALLOWED_HOSTS = ['127.0.0.1','192.168.1.89']
 
 
 # Application definition
@@ -40,11 +40,14 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'myapp',
-    'crispy_forms',
+    "crispy_forms",
+    "crispy_bootstrap5",
 
 ]
 
-CRISPY_TEMPLATE_PACK = 'uni_form'
+CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap5"
+
+CRISPY_TEMPLATE_PACK = "bootstrap5"
 
 
 MIDDLEWARE = [
@@ -125,11 +128,12 @@ USE_TZ = True
 
 STATIC_URL = 'static/'
 
-STATICFILES_DIRS = [BASE_DIR /'static']
+STATICFILES_DIRS = [BASE_DIR /'myapp/static']
 
 
-# MEDIA_URL='/images/'
-# MEDIA_ROOT=BASE_DIR / 'static/images' 
+MEDIA_URL='/images/'
+
+MEDIA_ROOT=BASE_DIR / 'myapp/static/images' 
 
 
 

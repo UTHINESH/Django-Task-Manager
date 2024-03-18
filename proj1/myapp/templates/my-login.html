@@ -9,9 +9,11 @@
 
         <meta name="viewport" content="width-device-width, initial-scale=1, maximum-scale=1"/>
 
-        <link rel="stylesheet" type="text/css" href="https://bootswatch.com/5/solar/bootstrap.min.css">
+        <link rel="stylesheet" type="text/css" href="https://bootswatch.com/5/lux/bootstrap.min.css">
 
-        <link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}">
+        <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
         <title> Taskly | MY Login </title>
 
@@ -22,7 +24,7 @@
 
     <br>
 
-    <div class="container bg-white shadow-md p-5 form-layout">
+    <div class="text-dark container bg-grey shadow-lg p-5 form-layout">
 
         <h3>Login</h3>
 
@@ -34,13 +36,31 @@
             {% csrf_token %}
             
             
-            {{form.as_p}}
+            {{form|crispy}}
 
             
             
-            <input class="btn btn-primary navbar-btn" type="submit" value="Login"/>
+            <!-- <input class="btn btn-primary navbar-btn" type="submit" value="Login"/> -->
+            <button class="btn btn-primary" type="submit"><i class="fa fa-key" aria-hidden="true"></i> &nbsp; Login</button>
 
             <br><br>
+
+            {% for message in messages %}
+
+                {% if message.level == DEFAULT_MESSAGE_LEVELS.SUCCESS %}
+
+                    <p id="message-timer" class="alert alert-dismissible alert-success">
+                        
+                        <i class="fa fa-check" aria-hidden="true"></i> &nbsp; {{message}}
+                    
+                    </p>
+
+                {% endif %}
+
+            {% endfor %}
+
+            <br>
+
 
             <p>If you Don't have an account? <a href="{% url 'register' %}"> Register </a></p>
             
@@ -50,5 +70,17 @@
     </div>
 
     <br>
+
+    <script src="{% static 'js/app.js' %}"></script>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"  crossorigin="anonymous"></script>
+
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+
+    integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+
+    crossorigin="anonymous">
+
+    </script>
 </body>
 </html>

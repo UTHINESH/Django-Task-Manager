@@ -9,9 +9,9 @@
 
         <meta name="viewport" content="width-device-width, initial-scale=1, maximum-scale=1"/>
 
-        <link rel="stylesheet" type="text/css" href="https://bootswatch.com/5/solar/bootstrap.min.css">
+        <link rel="stylesheet" type="text/css" href="https://bootswatch.com/5/lux/bootstrap.min.css">
 
-        <link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}">
+        <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
 
         <title> Taskly | Dashboard </title>
 
@@ -22,15 +22,24 @@
 
     <br>
 
-    <div class="container bg-white shadow-md p-5 form-layout">
+    <div class="container bg-white shadow-lg p-5 form-layout ">
 
         <h2> Taskly !</h2>
 
         <hr>
 
+        <img style="width: 300px ; height: 350px;" src="{{profile.profile_pic.url}} " />
+
+
+        <br><br>
+
         <p>Welcome,to Taskly- <br><br> your personal task manager application !</p>
 
+        <br>
+
+        <a href="{% url 'profile-management' %}">Profile management</a>
+
     </div>
-    <br>
+    <!-- <script >alert('welcome to my website!');</script> -->
 </body>
 </html>

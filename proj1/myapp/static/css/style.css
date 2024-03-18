@@ -1,13 +1,18 @@
 h2 {
 
-    color: blue;
+    color: gray;
 
 }
 
 .form-layout{
 
-    border-radius:10px;
+    border: radius 10ch;
 
     width: 500px;
+}
+
+.message-text{
+
+    color: white;
 }
 

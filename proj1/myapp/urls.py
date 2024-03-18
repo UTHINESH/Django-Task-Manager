@@ -6,7 +6,7 @@ urlpatterns=[
 
     # HOME PAGE
 
-    path('',views.home,name=""),
+    path('',views.home,name=''),
     
 # ----------------DJANGO ADMIN USER OPERATIONS-------------------------#
 
@@ -23,11 +23,19 @@ urlpatterns=[
 
     path('dashboard',views.dashboard,name='dashboard'),
 
+    # PROFILE MANAGEMENT
+
+    path('profile-management',views.profile_management,name='profile-management'),
+
+    # DELETE USER ACCOUNT
+
+    path('delete-account',views.deleteAccount,name='delete-account'),
+
     # CREATE TASK
 
     path('create-task',views.createTask,name='create-task'),
 
-    # READ TASK
+    # VIEW TASK
 
     path('view-tasks',views.viewTask,name='view-tasks'),
 
